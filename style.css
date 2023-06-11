@@ -1,0 +1,49 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: wheat; 
+    background-color: #1b1d21; 
+}
+.header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.navBar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start; /* Updated property */
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box; /* include padding in width calculation */
+  }
+  .navBar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  } 
+  .navBar ul li {
+    margin: 0;
+    padding: 0;
+  } 
+  .navBar ul li a {
+    margin: 0;
+    padding: 13px 10px;
+    text-decoration: none;
+    border: 1px solid #000;
+  }
+.mainBody{
+    display: flex; 
+    justify-content:center ;
+    align-items: center;
+    flex-direction: column;
+}
+.socials{
+    display: flex; 
+    justify-content:center ;
+    align-items: center;
+}
