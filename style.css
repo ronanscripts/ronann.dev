@@ -102,11 +102,25 @@ a{
   -webkit-text-fill-color: transparent;
 }
 .homepage-body p{
-  color: white;
 }
 .infoOne{
   font-size: 150%;
+  color:white
 }
 .infoBullet{
   font-size: 100%;
+  color:gray
+}
+.socialIcons{
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow:5;
+  flex-shrink: 1;
+  gap: 2rem;
+  text-align: start;
+  flex-direction: row;
+  font-size: 150%;
+}
+.currentTime{
+  color:white;
 }

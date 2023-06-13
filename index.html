@@ -6,6 +6,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <html>
     <head>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/dayjs.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/timezone.min.js"></script>
+        <script>
+            dayjs.extend(dayjs_plugin_timezone);
+        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -51,13 +57,45 @@
         <![endif]-->
         <div class="homepage-body"> 
             <h1 class="branding-body">Ronan Reinhardt</h1>
-            <p class="infoOne"> Hello! I am a Software Engineer from California </p>
+            <p class="infoOne"> Hello! I am a Software Engineer based out of California. </p>
             <p class="infoBullet"> 18y • Intern @ podz.ai • Full Stack • Open Soruce Enthusaist </p>
+            <div class="socialIcons">
+                <a href="https://github.com/ronanscripts" class="fa fa-github"></a>
+                <a href="https://twitter.com/ronanscripts" class="fa fa-twitter"></a>
+                <a href="https://www.linkedin.com/in/ronanrein/" class="fa fa-linkedin"></a>
+                <a href="https://www.youtube.com/channel/UC5rM76y-PzP0Cwl9hxNO4Zw" class="fa fa-youtube"></a>
+            </div>
+            <div class="currentTime">
+            <span id="time"></span>
+            <script>
+                // Set the timezone for the desired location
+                dayjs.tz.setDefault("America/New_York");
+                // Function to update the displayed time
+                function updateTime() {
+                  // Get the current time in the specified timezone
+                    var newYorkTime = dayjs();
+                  // Format the time as desired
+                    var formattedTime = newYorkTime.format('D MMMM YYYY • h:m:s A');
+                  // Update the HTML element with the formatted time
+                    document.getElementById('time').textContent = formattedTime;
+                }
+                // Update the time initially
+                updateTime();
+                // Update the time every second (1000 milliseconds)
+                setInterval(updateTime, 1000);
+            </script>
+            </div>
+            <div id="weather"></div>
+
+            
+
+            
         </div>
             <!-- the DIV that will contain the widget -->
         
         
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.8/dayjs.min.js"></script>
         <script src="script.js" async defer></script>
     </body>
 </html>
+
