@@ -1,4 +1,3 @@
-require('dotenv').config()
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
@@ -14,23 +13,29 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
 }))
 
 // Replace 'YOUR_API_KEY' with your actual API key
-const apiKey = process.env.API_KEY;
-const weatherLocation = 'Santa Clara, US'; // Replace with the desired location
-// Fetch weather data from OpenWeather API
-fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`)
+const apiKey = "feaa29c2e60f14e6ef146030814d162a";
+const weatherLocation = 'San Jose, US';
+
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherLocation}&appid=${apiKey}`;
+
+fetch(url)
     .then(response => response.json())
     .then(data => {
-        // Extract the relevant weather information from the response
-        const description = data.weather[0].description;
-        const temperature = (data.main.temp - 273.15).toFixed(2); // Convert Kelvin to Celsius
+    // Extract the relevant weather information from the 'data' object
+    const temperature = data.main.temp;
+    const description = data.weather[0].description;
 
-        // Display the weather information on the webpage
-        const weatherDiv = document.getElementById('weather');
-        weatherDiv.innerHTML = `Currently ${temperature.toFixed(1)} &#8451; (${description}) in ${location}`;
+    // Format the weather information
+    const formattedWeather = `Currently ${temperature.toFixed(1)} &#8451; (${description}) in ${location}`;
+
+    // Update the HTML element with the formatted weather information
+    const weatherDiv = document.getElementById('weather');
+    weatherDiv.innerHTML = formattedWeather;
     })
     .catch(error => {
-        console.log('An error occurred while fetching weather data:', error);
+    console.log('Error:', error);
     });
+
 
 
 
