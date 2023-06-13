@@ -66,11 +66,12 @@ a{
   }
   .nav-menu{
     position: fixed;
+    z-index: 9999;
     left: -100%;
     top: 70px;
     gap: 0;
     flex-direction: column;
-    background-color: gray;
+    background-color: #424242;
     width:100%;
     text-align: center;
     transition: 0.3s;
