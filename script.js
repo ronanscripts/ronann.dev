@@ -17,7 +17,7 @@ const apiKey = "feaa29c2e60f14e6ef146030814d162a";
 const weatherLocation = 'San Jose, US';
 
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherLocation}&appid=${apiKey}`;
-
+/*
 fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -26,7 +26,7 @@ fetch(url)
     const description = data.weather[0].description;
 
     // Format the weather information
-    const formattedWeather = `Currently ${temperature.toFixed(1)} &#8451; (${description}) in ${location}`;
+    const formattedWeather = `Currently ${temperature.toFixed(1)} &#8451; (${description}) in ${weatherLocation}`;
 
     // Update the HTML element with the formatted weather information
     const weatherDiv = document.getElementById('weather');
@@ -35,9 +35,4 @@ fetch(url)
     .catch(error => {
     console.log('Error:', error);
     });
-
-
-
-
-
-
+*/

@@ -80,6 +80,8 @@ a{
   }
   .nav-menu.active{
     left:0;
+    position: fixed;
+    z-index: 9999;
   }
 }
 .homepage-body{ 
@@ -97,6 +99,7 @@ a{
   position: relative;
   font-family: 'Poppins', sans-serif;
   font-size: 300%;
+  z-index: 9998;
   background: -webkit-linear-gradient(#eee, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
