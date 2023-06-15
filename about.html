@@ -51,14 +51,37 @@
         </div>
         
     </head>
-    <body>
+    <style>
+
+        body { background: #262626; -webkit-transition: all 1s ease; transition: all 1s ease; }
+
+        .loaded { background: #262626; }
+
+    </style>
+    <script>function loaded (el) { el.classList.add('loaded') }</script>
+    <body  onload="loaded(document.body)">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div class="about-body"> 
+            <h1 class="about-branding-body">About</h1>
+            <div class="image-container">
+                <img class="aboutPhoto" src="images/about/about.jpg" alt="Image failed to load">
+            </div>
+            <p class="aboutOne">I am a Software Engineer currently located in California, where I am pursuing an internship at a dynamic startup company.<br>
+                I am an avid contributor to the open-source community.</p>
+            <p class="aboutTwo">From an early stage, I developed a deep fascination for computers and electronics, which has fueled my interest in programming. This passion has been particularly inspired by my love for video games,<br>
+                as the interactive and immersive nature of gaming has captivated me and sparked a desire to contribute to the creation of such experiences.</p>    
+            <p class="aboutThree">Looking ahead, my ultimate aspiration is to establish a career as a game developer. By merging my technical expertise with my passion for gaming,<br>
+                I aim to contribute to the development of innovative and captivating video games that entertain and inspire players around the world.</p>
+            <h1 class="aboutFour">Skills</h1>
+            <p class="skills">| Frontend | Backend | Vite | System Integration | Computer Networking | Electronic Circuits | Arduino | Raspberry PI |</p>
+            <div class="socialIcons">
+                <!-- Add your social icons here -->
+            </div>
+            </div>
             
 
-            
-        </div>
             <!-- the DIV that will contain the widget -->
         
         

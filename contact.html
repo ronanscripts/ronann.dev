@@ -51,7 +51,15 @@
         </div>
         
     </head>
-    <body>
+    <style>
+
+        body { background: #262626; -webkit-transition: all 1s ease; transition: all 1s ease; }
+
+        .loaded { background: #262626; }
+
+    </style>
+    <script>function loaded (el) { el.classList.add('loaded') }</script>
+    <body  onload="loaded(document.body)">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->

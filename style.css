@@ -6,6 +6,11 @@
 }
 body{
   background-color:#262626;
+  opacity : 0;
+  transition : opacity 1s ease; 
+}
+.loaded {
+  opacity : 1;
 }
 header{
   background-color: #262626;
@@ -128,3 +133,55 @@ a{
 .currentTime{
   color:white;
 }
+.about-body { 
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 5;
+  flex-shrink: 1;
+  gap: 2rem;
+  text-align: start;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 50px;
+}
+
+.about-branding-body {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  font-size: 300%;
+  z-index: 9998;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.image-container {
+  width: 100%; /* Set the container width to fill the available space */
+}
+
+.aboutPhoto {
+  width: 100%; /* Set the image width to fill the container */
+  height: auto; /* Automatically adjust the height to maintain the aspect ratio */
+  border-radius: 20px; /* Adjust the value to control the roundness of the corners */
+  max-width: 800px; /* Set the maximum width for the image */  
+}
+
+.aboutOne,
+.aboutTwo,
+.aboutThree {
+  color: white;
+  gap: 2rem;
+}
+
+.aboutFour {
+  color: gray;
+}
+
+.skills {
+  color: white;
+}
+
+.socialIcons {
+  /* Add styles for social icons here */
+}
+

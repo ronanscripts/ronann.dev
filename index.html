@@ -51,7 +51,15 @@
         </div>
         
     </head>
-    <body>
+    <style>
+
+        body { background: #262626; -webkit-transition: all 1s ease; transition: all 1s ease; }
+
+        .loaded { background: #262626; }
+
+    </style>
+    <script>function loaded (el) { el.classList.add('loaded') }</script>
+    <body  onload="loaded(document.body)">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -66,27 +74,41 @@
                 <a href="https://www.youtube.com/channel/UC5rM76y-PzP0Cwl9hxNO4Zw" class="fa fa-youtube"></a>
             </div>
             <div class="currentTime">
-            <span id="time"></span>
-            <script>
-                // Set the timezone for the desired location
-                dayjs.tz.setDefault("America/New_York");
-                // Function to update the displayed time
-                function updateTime() {
-                  // Get the current time in the specified timezone
-                    const newYorkTime = dayjs();
-                    const timeZone = (' PST');
-                
-                  // Format the time as desired
-                    const formattedTime = newYorkTime.format('D MMMM YYYY • h:m:s A');
-                  // Update the HTML element with the formatted time
-                    document.getElementById('time').textContent = formattedTime + timeZone;
-                }
-                // Update the time initially
-                updateTime();
-                // Update the time every second (1000 milliseconds)
-                setInterval(updateTime, 1000); 
-            </script><p style="font-size:23px">&#9749</p>
+                <span id="time"></span>
+                <script>
+                    // Set the timezone for the desired location
+                    dayjs.tz.setDefault("America/New_York");
+                    // Function to update the displayed time
+                    function updateTime() {
+                        // Get the current time in the specified timezone
+                        const newYorkTime = dayjs();
+                        const timeZone = ' PST';
+            
+                        // Format the time as desired
+                        const formattedTime = newYorkTime.format('D MMMM YYYY • h:m:s A');
+            
+                        // Determine the appropriate emoji based on the time of day
+                        let emoji = '';
+                        const hour = newYorkTime.hour();
+                        if (hour >= 5 && hour < 12) {
+                            // Morning (AM)
+                            emoji = '☕️'; // Coffee cup emoji
+                        } else {
+                            // Afternoon and evening (PM)
+                            emoji = '🧑🏻‍💻'; // Guy on a laptop emoji
+                        }
+            
+                        // Update the HTML element with the formatted time and emoji
+                        document.getElementById('time').innerHTML = formattedTime + timeZone + ' ' + emoji;
+                    }
+            
+                    // Update the time initially
+                    updateTime();
+                    // Update the time every second (1000 milliseconds)
+                    setInterval(updateTime, 1000);
+                </script>
             </div>
+            
             <div id="weather"></div>
 
         </div>
