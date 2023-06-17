@@ -2,9 +2,6 @@ const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 require('dotenv').config()
 
-
-
-
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
@@ -14,7 +11,8 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }))
-
+//i am aware of this being leaked, i have it rate limited and am also finding alternative options to hide 
+//.env will not work because im not using a framework so i will probably make a proxy
 const apiKey = process.env.API_KEY;
 const weatherLocation = 'Atherton, US';
 
