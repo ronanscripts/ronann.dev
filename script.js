@@ -10,9 +10,10 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }))
-//i am aware of this being leaked, i have it rate limited and am also finding alternative options to hide 
-//.env will not work because im not using a framework so i will probably make a proxy
-const apiKey = process.env.API_KEY;
+
+//commented out because i cannot get the api key.
+//i dont want to do a bunch of bs like making a proxy for it, and i cant use .env because i dont want to use a bloated framework
+/*const apiKey = API_KEY;
 const weatherLocation = 'Atherton, US';
 
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherLocation}&appid=${apiKey}`;
@@ -64,6 +65,7 @@ fetch(url)
     })
     .catch(error => {
         console.log('Error:', error);
-    });
+    }); */
+
 
 
