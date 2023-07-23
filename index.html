@@ -53,11 +53,8 @@
         
     </head>
     <style>
-
         body { background: #262626; -webkit-transition: all 1s ease; transition: all 1s ease; }
-
         .loaded { background: #262626; }
-
     </style>
     <script>function loaded (el) { el.classList.add('loaded') }</script>
     <body  onload="loaded(document.body)">
@@ -84,10 +81,8 @@
                         // Get the current time in the specified timezone
                         const newYorkTime = dayjs();
                         const timeZone = ' PST';
-            
                         // Format the time as desired
                         const formattedTime = newYorkTime.format('D MMMM YYYY • h:m:s A');
-            
                         // Determine the appropriate emoji based on the time of day
                         let emoji = '';
                         const hour = newYorkTime.hour();
@@ -98,24 +93,18 @@
                             // Afternoon and evening (PM)
                             emoji = '🧑🏻‍💻'; // Guy on a laptop emoji
                         }
-            
                         // Update the HTML element with the formatted time and emoji
                         document.getElementById('time').innerHTML = formattedTime + timeZone + ' ' + emoji;
                     }
-            
                     // Update the time initially
                     updateTime();
                     // Update the time every second (1000 milliseconds)
                     setInterval(updateTime, 1000);
                 </script>
             </div>
-            
             <div id="weather"></div>
-
         </div>
             <!-- the DIV that will contain the widget -->
-        
-        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.8/dayjs.min.js"></script>
         <script src="script.js" async defer></script>
     </body>
