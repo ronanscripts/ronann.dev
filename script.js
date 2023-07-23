@@ -1,3 +1,4 @@
+//My portfolio site made to be as minimal as possible. By Ronan E Reinhardt 2023
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
